@@ -1,0 +1,48 @@
+{
+  "widgets": [
+    {
+      "type": "text",
+      "x": 0,
+      "y": 0,
+      "width": 24,
+      "height": 3,
+      "properties": {
+        "markdown": "# Brain Tasks App - CI/CD Dashboard"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 3,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "AWS/CodeBuild", "BuildsFailed", "ProjectName", "brain-task-app-build" ],
+          [ ".", "BuildsSucceeded", ".", "." ]
+        ],
+        "period": 300,
+        "stat": "Sum",
+        "region": "us-east-1",
+        "title": "CodeBuild Build Status"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 12,
+      "y": 3,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "AWS/CodePipeline", "FailedExecutions", "PipelineName", "brain-tasks-pipeline" ],
+          [ ".", "SucceededExecutions", ".", "." ]
+        ],
+        "period": 300,
+        "stat": "Sum",
+        "region": "us-east-1",
+        "title": "CodePipeline Executions"
+      }
+    }
+  ]
+}

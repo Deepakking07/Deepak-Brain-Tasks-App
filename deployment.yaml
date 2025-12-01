@@ -5,7 +5,7 @@ metadata:
   labels:
     app: brain-tasks
 spec:
-  replicas: 2  # High availability
+  replicas: 2
   selector:
     matchLabels:
       app: brain-tasks
@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
       - name: brain-tasks-container
-        image: 323997748732.dkr.ecr.us-east-1.amazonaws.com/brain-task-app:latest
+        image: 620369152660.dkr.ecr.us-east-1.amazonaws.com/brain-task-app:latest
         ports:
         - containerPort: 80
         resources:
           requests:
-            memory: "128Mi"   # Adjusted for EC2 small instance
+            memory: "128Mi"
             cpu: "200m"
           limits:
             memory: "256Mi"
@@ -38,3 +38,4 @@ spec:
             port: 80
           initialDelaySeconds: 5
           periodSeconds: 5
+
