@@ -7,7 +7,7 @@ def lambda_handler(event, context):
     Lambda handler to deploy Kubernetes manifests to EKS
     """
     # Paths
-    aws_cli = "/opt/bin/aws"
+    aws_cli = "/opt/awscli/bin/aws"   # Corrected path
     kubectl = "/tmp/app/kubectl"
     kubeconfig = "/tmp/.kube/config"
     
