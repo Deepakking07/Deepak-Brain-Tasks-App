@@ -1,5 +1,5 @@
 # Step 1: Use official Nginx image (Alpine for minimal size)
-FROM nginx:alpine
+FROM public.ecr.aws/nginx/nginx:alpine
 
 # Step 2: Copy static files from dist folder to Nginx html directory
 COPY dist /usr/share/nginx/html
