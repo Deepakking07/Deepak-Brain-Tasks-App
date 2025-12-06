@@ -20,11 +20,12 @@ phases:
       - docker push 620369152660.dkr.ecr.us-east-1.amazonaws.com/brain-task-app:latest
       - echo Writing image definitions file...
       - printf '[{"name":"brain-task-container","imageUri":"620369152660.dkr.ecr.us-east-1.amazonaws.com/brain-task-app:latest"}]' > imagedefinitions.json
+      - echo "Creating app directory for Lambda manifests..."
+      - mkdir -p app
+      - cp deployment.yaml service.yaml app/
 
 artifacts:
+  base-directory: app      # ← KEY CHANGE: Creates /tmp/app/ structure
   files:
-    - imagedefinitions.json
-    - deployment.yaml
-    - service.yaml
-    - scripts/**/*
+    - '**/*'              # ← Include ALL files in app/ folder
 
